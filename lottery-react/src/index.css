@@ -1,4 +1,23 @@
 body {
   font-family: 'Montserrat', sans-serif !important;
+  
+}
+.wrapper{
+  height:600px;
+  
+}
+.wrapper::after { 
+ max-height: 600px;
+ content:"";
+ background : url('./assets/images/etherLogo.png');
+ background-repeat: no-repeat;
+ background-position: center;
+ opacity: 0.2;
+ top: 0;
+ left: 0;
+ bottom: 0;
+ right: 0;
+ position: absolute;
+ z-index: -1;
 }
 

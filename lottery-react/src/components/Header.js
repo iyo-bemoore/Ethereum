@@ -30,7 +30,7 @@ const Header = () => {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography  className={classes.typography} variant="h6" color="inherit">
+          <Typography  className={classes.typography} variant="subtitle1" color="inherit">
             Ethereum Lottery
           </Typography>
         </Toolbar>

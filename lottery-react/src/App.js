@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import lottery from "./lottery";
 import web3 from "./web3";
 import Header from "./components/Header";
+import Form from "./components/Form";
 
 class App extends Component {
   
@@ -18,9 +19,11 @@ class App extends Component {
     this.setState({ manager,players,balance });
   }
   render() {
-    console.log(this.state)
     return (
-       <Header/>
+      <div className="wrapper">
+        <Header/>
+        <Form/>
+      </div>
     );
   }
 }
