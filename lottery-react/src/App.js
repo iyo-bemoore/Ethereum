@@ -1,17 +1,27 @@
 import React, { Component } from "react";
 import lottery from "./lottery";
+import web3 from "./web3";
+import Header from "./components/Header";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { manager: "" };
-  }
+  
+  state = { 
+    manager: "",
+    players:[],
+    balance:'' 
+  };
+  
   async componentDidMount() {
     const manager = await lottery.methods.manager().call();
-    this.setState({ manager });
+    const players = await lottery.methods.getPlayers().call();
+    const balance = await web3.eth.getBalance(lottery.options.address)
+    this.setState({ manager,players,balance });
   }
   render() {
-    return <div> { this.state.manager } </div>;
+    console.log(this.state)
+    return (
+       <Header/>
+    );
   }
 }
 
