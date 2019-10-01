@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { PlayContext } from "../context/PlayContext";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -24,14 +25,17 @@ const useStyles = makeStyles(theme => ({
 
 const Form = () => {
   const classes = useStyles();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState('');
+  const {amount, addAmount, confirmation} = useContext(PlayContext);
   
-  const formSubmit = e => {
+  const formSubmit = async e => {
       e.preventDefault()
-      console.log(value)
+      await addAmount(value)
+      setValue('')
   }
-
   return (
+    <>
+    <p>{confirmation}</p>  
     <form
        onSubmit={formSubmit} 
        className={classes.container} noValidate autoComplete="off">
@@ -47,6 +51,7 @@ const Form = () => {
         Play
       </Button>
     </form>
+    </>
   );
 };
 export default Form;
