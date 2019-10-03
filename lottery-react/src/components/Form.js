@@ -11,7 +11,9 @@ const useStyles = makeStyles(theme => ({
     flexWrap: "wrap"
   },
   button: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
+    background:'#00d68b',
+    color:'#FFF'
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -34,8 +36,6 @@ const Form = () => {
       setValue('')
   }
   return (
-    <>
-    <p>{confirmation}</p>  
     <form
        onSubmit={formSubmit} 
        className={classes.container} noValidate autoComplete="off">
@@ -46,12 +46,13 @@ const Form = () => {
         className={clsx(classes.textField, classes.dense)}
         margin="dense"
         value={value}
+        type="text"
       />
-      <Button type="submit" variant="contained" color="secondary" className={classes.button}>
+      <Button type="submit" disabled={!value} variant="contained" className={classes.button}>
         Play
       </Button>
     </form>
-    </>
   );
 };
 export default Form;
+

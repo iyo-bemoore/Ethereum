@@ -18,7 +18,7 @@ const PlayContextProvider = props => {
       const balance = await web3.eth.getBalance(lottery.options.address);
       setManager(manager);
       setBalance(balance);
-      setPlayers([...players, players]);
+      setPlayers([...players]);
     }
     getLotteryData();
   }, []);
@@ -32,10 +32,26 @@ const PlayContextProvider = props => {
     });
     setConfirmation("You have been accepted ! ");
   };
-  
+
+  const pickWinner = async () => {
+    const accounts = await web3.eth.getAccounts();
+    setConfirmation("Searching for a Winner!");
+    await lottery.methods.pickAWinner().send({
+      from: accounts[0]
+    });
+    setConfirmation("A Winner has been picked!");
+  };
   return (
     <PlayContext.Provider
-      value={{ manager, players, balance, amount, addAmount, confirmation }}
+      value={{
+        manager,
+        players,
+        balance: web3.utils.fromWei(balance, "ether"),
+        amount,
+        addAmount,
+        confirmation,
+        pickWinner
+      }}
     >
       {props.children}
     </PlayContext.Provider>
