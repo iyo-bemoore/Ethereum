@@ -3,6 +3,7 @@ import { PlayContext } from "../context/PlayContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import LoadingMessage from "./LoadingMessage";
+import CoinPrices from "./CoinPrices";
 
 const useStyles = makeStyles({
   card: {
@@ -40,7 +41,9 @@ const SubHeader = () => {
           will be submitted in a few seconds!
         </Typography>
       ) : (
-        <LoadingMessage message={confirmation} />
+        <div>
+          <LoadingMessage message= { confirmation }/>
+        </div>
       )}
     </div>
   );

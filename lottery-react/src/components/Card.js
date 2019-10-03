@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
   
   },
   paperLeft: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    marginLeft:theme.spacing(2)
   },
   image: {
     width: 64,

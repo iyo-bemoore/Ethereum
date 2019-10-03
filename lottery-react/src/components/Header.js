@@ -1,41 +1,51 @@
 import React from 'react';
-import { makeStyles  } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import CoinPrices from './CoinPrices';
 
 const useStyles = makeStyles(theme => ({
-  typography:{
-    fontFamily:'Montserrat'
-  },
-    root: {
+  root: {
     flexGrow: 1,
-    fontFamily: theme
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  title: {
+    flexGrow: 1,
+    fontFamily:'Montserrat'
+  },
+  btcWrapper:{
+    padding:'.6em'
+  },
+  btc:{
+    display:'block',
+    fontSize:'.6em',
+    color: '#00d68b',
+    textAlign: 'center'
+  },
+  amount:{
+
+  }
 }));
-
-const Header = () => {
+export default function Header() {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar variant="dense">
+        <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography  className={classes.typography} variant="subtitle1" color="inherit">
-            Ethereum Lottery
+          <Typography variant="h6" className={classes.title}>
+            Ethereum Lottery 
           </Typography>
+         <CoinPrices/>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
-export default Header;
