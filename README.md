@@ -11,9 +11,13 @@ The following instructions will get you a copy of this repository on your local 
 Get a copy of the repository
 
 - From the command-line
+
   `git clone https://github.com/2imad/Ethereum.git`
+
   `cd Ethereum`
+
   `cd => to any individual project folder`
+
   `npm install`
 
 ## Installation
