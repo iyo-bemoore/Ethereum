@@ -31,7 +31,7 @@ To run the application run the following command from the project root folder
 
 ## Tools
 
-the project is build using the following assest :
+the project is built using the following assest :
 
 - [Remix](https://remix.ethereum.org/) - Online Solidity IDE
 - [Node.js](https://nodejs.org/en/) - Compiling Solidity code
@@ -40,4 +40,4 @@ the project is build using the following assest :
 
 ## Acknowledgments
 
-This repository is build following Stephen grider's course on Udemy : **Ethereum and Solidity: the complete developer's guide**
+This repository is built following Stephen grider's course on Udemy : **Ethereum and Solidity: the complete developer's guide**
